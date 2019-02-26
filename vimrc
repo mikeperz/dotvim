@@ -9,7 +9,7 @@ endif
 
 " ================ General Config ====================
 
-"execute pathogen#infect()
+execute pathogen#infect()
 set number "relativenumber      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
@@ -25,7 +25,7 @@ set autoread                    "Reload files changed outside vim
 set hidden
 
 "turn on syntax highlighting
-syntax on
+syntax enable
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
@@ -79,8 +79,7 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
@@ -126,10 +125,15 @@ vmap <leader>m :norm A # => <Esc>
 "
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Make it obvious where 80 characters is
 set colorcolumn=81
 
 set wildmode=longest,list,full
 set wildmenu
+
+if &diff
+  set diffopt+=iwhite
+  colorscheme evening
+endif

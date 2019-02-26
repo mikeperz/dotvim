@@ -2,11 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" source ~/.vimrc.before if it exists.
-if filereadable(expand("~/.vimrc.before"))
-source ~/.vimrc.before
-endif
-
 " ================ General Config ====================
 
 execute pathogen#infect()
@@ -25,7 +20,7 @@ set autoread                    "Reload files changed outside vim
 set hidden
 
 "turn on syntax highlighting
-syntax enable
+syntax on
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x

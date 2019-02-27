@@ -12,6 +12,7 @@ set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
+set belloff=all                 "No sounds
 set autoread                    "Reload files changed outside vim
 
 " This makes vim act like all other editors, buffers can
@@ -38,11 +39,8 @@ set nowb
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
-" if has('persistent_undo') && !isdirectory(expand('~').'/.vim/backups')
-" silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undofile
 set undodir=~/.vim/undo
-" endif
 
 " ================ Folds ============================
 
